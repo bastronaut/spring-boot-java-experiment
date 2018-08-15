@@ -7,10 +7,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class Customer {
 
-    @Autowired
-    private Person person;
+    final Person person;
 
-    public String getCustomerName() {
+    @Autowired
+    public Customer(Person person) {
+        this.person = person;
+    }
+
+    public String getName() {
         return person.getName();
     }
 }
